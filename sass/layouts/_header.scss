@@ -1,0 +1,211 @@
+header {
+    width: 100%;
+    position: relative;
+    .large-screen {
+        .navbar-brand {
+            img {
+                width: 100%;
+            }
+        }
+        .navbar {
+            padding: 0;
+            justify-content: space-between;
+        }
+        .nav-item {
+            &:nth-child(1) {
+                position: relative;
+                .sub-menu{
+                  @include styleSubMenu(-274px);
+                }
+            }
+            
+            .nav-link {
+                &:nth-child(1) {
+                    position: relative;
+                }
+                padding-right: 1.9rem !important;
+                line-height: 54px;
+                display: block;
+                &:hover {
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        bottom: -3px;
+                        left: 23px;
+                        width: 10px;
+                        height: 10px;
+                        border-radius: 50%;
+                        background-color: $color-1;
+                        z-index: 100;
+                    }
+                    @include styleTextHover();
+                }
+                @include styleText($color-2, $fs-6, $fw-2);
+            }
+            &:nth-child(2) {
+                .nav-link {
+                 &::after {
+                    content: "";
+                    position: absolute;
+                    bottom: -3px;
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    background-color: #b61984;
+                    z-index: 10;
+                    left: 21px;
+                 }
+                }
+            }
+            &:nth-child(2) {
+                position: relative;
+                .sub-menu{
+                    @include styleSubMenu(0px);
+                }
+            }
+            &:nth-child(3) {
+                position: relative;
+                .sub-menu{
+                    @include styleSubMenu(0px);
+                }
+            }
+            &:nth-child(4) {
+                position: relative;
+                .sub-menu{
+                    @include styleSubMenu(0px);
+                }
+            }
+            &:nth-child(5) {
+                position: relative;
+                .sub-menu{
+                    @include styleSubMenu(0px);
+                }
+            }
+            &:nth-child(6) {
+                position: relative;
+                .sub-menu{
+                    @include styleSubMenu(-274px);
+                }
+            }
+            .sub-menu .menu-item {
+                width: 234px;
+                list-style: none;
+                .title-sub-menu {
+                    @include styleText($color-2, $fs-6, $fw-2);
+                    position: relative;
+                    display: block;
+                    text-decoration: none;
+                    padding: 15px;
+                    &::after {
+                        @include styleLine($color-1, 3px);
+                    }
+                    &:hover {
+                        @include styleTextHover();
+                    } 
+                  
+                }
+                ul li {
+                    list-style: none;
+                    position: relative;
+                    padding: 15px;
+                    a {
+                        text-decoration: none;
+                        @include styleText($color-2, $fs-6, $fw-2);
+                        &::after {
+                            @include styleLine($color-3, 1px);
+                        }
+                        &:hover {
+                            @include styleTextHover();
+                        }       
+                    }
+                    &:nth-child(4) {
+                        a::after {
+                            @include styleLine($color-3, 0px);
+                        }
+                    }
+                }
+            }
+        }
+          .button-icon {
+              gap: 1rem;
+              cursor: pointer;
+              i {
+                  padding-right: 10px;
+                  &:nth-child(4) {
+                     padding-right: 0;
+                    }
+                   &:hover {
+                    @include styleTextHover();
+                   } 
+            }  
+          }
+    }
+    .small-screen {
+        display: none;
+        .logo {
+            gap: 2rem;
+            img {
+                width: 7%;
+            }
+            .menuBar {
+                font-size: 25px;
+            }
+            .close {
+                font-size: 25px;
+                display: none;
+                position: absolute;
+                left: 310px;
+            }
+        }
+        .menu-small-screen {
+            position: absolute;
+            background: white;
+            width: 300px;
+            height: 100vh;
+            left: -200px;
+            top: 0;
+            z-index: 100 !important;
+            text-align: center;
+            opacity: 0;
+            transform: 1s cubic-bezier(.230,1,.320,1);
+            box-shadow: 2px 0 5px #0000001a;  
+            transition: all .5s ease-in-out;  
+            img {
+                width: 50%;
+            }
+            nav {
+                ul li {
+                    margin-bottom: 1rem;
+                    list-style: none;
+                    a {
+                        text-decoration: none;
+                        color: $color-2;
+                        &:hover {
+                            @include styleTextHover();
+                        }       
+                    }
+                }
+            }
+            .button-icon {
+                button {
+                    margin-top: 1rem;
+                    margin-bottom: 13px;
+                }
+            }
+        }
+        .show_menu {
+            left: 0 !important;
+            opacity: 1 !important;
+            transform: 1s cubic-bezier(.230,1,.320,1);
+            transition: all .5s ease-in-out;     
+        }
+    }
+    @include responsive_1200 {
+        .small-screen {
+            display: block;
+        } 
+        .large-screen {
+            display: none;
+        }
+    }
+}

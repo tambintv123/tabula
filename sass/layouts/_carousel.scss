@@ -1,0 +1,34 @@
+.carousel {
+    padding-top: 8rem;
+    position: relative;
+    .carousel-title {
+        h3 {
+            @include styleText($color-1, $fs-4, $fw-2);
+        }
+        h1 {
+            @include styleText($color-2, $fs-1, $fw-1);
+            letter-spacing: 1px;
+        }
+    }
+   .bg-top {
+       position: absolute;
+       top: 0;
+       img {
+           width: 100%;
+       }
+   }
+   .bg-bottom {
+       position: absolute;
+       bottom: 0;
+       img {
+           width: 100%;
+       }
+   }
+   @include responsive_768 {
+       .carousel-title {
+           h1 {
+               font-size: 47px;
+           }
+       }
+   }
+}

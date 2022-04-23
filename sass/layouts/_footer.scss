@@ -1,0 +1,101 @@
+footer {
+    background-image: url('../../images/footer_background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding-bottom: 12rem;
+    padding-top: 5rem;
+    .contactUs {
+        h3 {
+            @include styleText(#fff, $fs-3, $fw-1);
+            margin-bottom: 2rem;
+        }
+        .location {
+            gap: 1rem;
+        }
+        .tel {
+            gap: 1rem;
+        }
+        .timetable {
+            gap: 1rem;
+        }
+        .icon-list {
+            gap: 1rem;
+            i {
+                cursor: pointer;
+                &:hover {
+                    color: $color-2;
+                    transition: all .3s ease-in-out;
+                }
+            }
+        }
+    }
+    .links {
+        h3 {
+            @include styleText(#fff, $fs-3, $fw-1);
+            margin-bottom: 2rem;
+        }
+       ul li {
+           list-style: none;
+           padding: 8px;
+           position: relative;
+         
+           a {
+               text-decoration: none;
+               color: white;
+               &:hover {
+                color: $color-2;
+                transition: all .3s ease-in-out;
+               }
+               &::before {
+                content: "";
+                position: absolute;
+                bottom: 0px;
+                width: 100%;
+                height: 1px;
+                background: #a00377;
+                left: 8px;
+            }
+           }
+       }
+    }
+    .about {
+        h3 {
+            @include styleText(#fff, $fs-3, $fw-1);
+            margin-bottom: 2rem;
+        }
+       ul li {
+           list-style: none;
+           padding: 8px;
+            position: relative;
+          
+           a {
+               color: white;
+               text-decoration: none;
+               &:hover {
+                color: $color-2;
+                transition: all .3s ease-in-out;
+               }
+               &::before {
+                content: "";
+                position: absolute;
+                bottom: 0px;
+                width: 100%;
+                height: 1px;
+                background: #a00377;
+                left: 8px;
+            }
+           }
+       }
+    }
+    .newsLetter {
+        h3 {
+            @include styleText(#fff, $fs-3, $fw-1);
+            margin-bottom: 2rem;
+        }
+        .button-footer {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
